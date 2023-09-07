@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>services</title>
+
+    <script>
+        const url = 'https://wft-geo-db.p.rapidapi.com/v1/geo/countries/US/regions';
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': '0825660e03msh0bc0d981d469517p12d8a4jsnf2de2efe5adc',
+            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+          }
+        };
+
+        async function getDataFromAPI() {
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json(); // Parse the response as JSON
+    console.log(data); // Log the parsed data to the console
+
+    if (Array.isArray(data.data)) { // Check if data.data is an array
+      // Generate the table HTML dynamically
+      const table = document.createElement('table');
+      const tableBody = document.createElement('tbody');
+
+      // Iterate over the data.data array and create table rows
+      data.data.forEach(item => {
+        const row = document.createElement('tr');
+        const cell1 = document.createElement('td');
+        const cell2 = document.createElement('td');
+
+        cell1.textContent = item.name; // Assuming the API response has a 'name' property
+        cell2.textContent = item.region; // Assuming the API response has a 'region' property
+
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        tableBody.appendChild(row);
+      });
+
+      table.appendChild(tableBody);
+      document.getElementById('content').appendChild(table); // Append the table to the content div
+    } else {
+      console.error('Data.data is not an array');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+
+        // Call the function to retrieve data from the API
+        getDataFromAPI();
+    </script>
+</head>
+<body>
+    <header>
+        <a href="about">О себе</a>
+        <a href="contact">Контакты</a>
+        <a href="portfolio">Портфолио</a>
+        <a href="services">Сервис</a>
+    </header>
+
+    <div class="content" id="content">
+        <!-- The match data will be dynamically added here -->
+    </div>
+
+</body>
+</html>

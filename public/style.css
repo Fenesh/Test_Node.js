@@ -1,0 +1,83 @@
+.One_body {
+    font-family: Arial, sans-serif;
+    background-image: url("img/One.jpg");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.one_div {
+    width: 100%;
+    text-align: center;
+}
+.one_submit {
+    width: 200px;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(237 225 203);
+    border-radius: 55%;
+}
+
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    margin-top: 10px;
+}
+
+.card p.hidden {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    width: 100%;
+}
+
+.card button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #555;
+}
