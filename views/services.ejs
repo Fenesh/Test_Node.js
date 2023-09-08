@@ -27,18 +27,31 @@
       const table = document.createElement('table');
       const tableBody = document.createElement('tbody');
 
+      table.style.border = "1px solid #000"
       // Iterate over the data.data array and create table rows
       data.data.forEach(item => {
         const row = document.createElement('tr');
         const cell1 = document.createElement('td');
         const cell2 = document.createElement('td');
+        const cell3 = document.createElement('td');
+        const cell4 = document.createElement('td');
+        cell1.style.border = "1px solid #000"
+        cell2.style.border = "1px solid #000"
+        cell3.style.border = "1px solid #000"
+        cell4.style.border = "1px solid #000"
+        
 
         cell1.textContent = item.name; // Assuming the API response has a 'name' property
-        cell2.textContent = item.region; // Assuming the API response has a 'region' property
+        cell2.textContent = item.wikiDataId; 
+        cell3.textContent = item.countryCode;
+        cell4.textContent = item.isoCode;
 
         row.appendChild(cell1);
         row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
         tableBody.appendChild(row);
+        tableBody.style.border = "1px solid #000"
       });
 
       table.appendChild(tableBody);
