@@ -1,5 +1,7 @@
 body{
     background-color: antiquewhite;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .One_body {
